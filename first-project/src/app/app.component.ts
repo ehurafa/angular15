@@ -3,16 +3,25 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
 @Component({
   selector: 'app-root',
   template: `
-  {{ valor }}
+  <app-title *ngIf="destroy"></app-title>
+  <br />
   <button (click)="add()">Adicionar</button>
+  {{ valor }}
+  <button (click)="destroyComponent()">Destruir componente</button>
   <router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+
+  public destroy: boolean = true;
 
   public valor: number = 1;
 
   public add(): number {
     return this.valor += 1
+  }
+
+  public destroyComponent() {
+    this.destroy = false;
   }
 
   ngOnInit(): void {
