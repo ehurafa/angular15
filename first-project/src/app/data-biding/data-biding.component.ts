@@ -12,4 +12,13 @@ export class DataBidingComponent {
   public imgSrc: string = "https://p.turbosquid.com/ts-thumb/OH/0A9fga/T1/rr_0000/jpg/1671401940/600x600/fit_q87/c28eb073e59dd01e9092280c093fc056c7634a85/rr_0000.jpg"
   public imgTitle: string = "Título da imagem"
 
+  public position: { x: number, y: number } = { x:0, y:0 } 
+  public alertInfo(value: MouseEvent) {
+    console.log(value)
+  }
+  public mouseMoveTest(value: MouseEvent) {
+    this.position.x = value.offsetX
+    this.position.y = value.offsetY
+  }
+
 }

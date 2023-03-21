@@ -4,8 +4,16 @@
 <p>{{ age > 30 }}</p>
 <p>Quanto é {{ age }} + 1?</p>
 <p>{{ age + 1 }}</p>
-
+<br>
 <hr />
-<p>Property Biding</p>
+<h2>Property Biding</h2>
 <button [disabled]="checkedDisabled">Button</button>
 <img [src]="imgSrc" [title]="imgTitle" />
+
+<br>
+<hr />
+
+<h2>Event Biding</h2>
+<button (click)="alertInfo($event)">Evento</button>
+<div (mousemove)="mouseMoveTest($event)" style="background: red; width: 300px; height: 300px"></div>
+{{ position.x }} - {{ position.y }}
