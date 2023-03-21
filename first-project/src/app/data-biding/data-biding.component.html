@@ -17,3 +17,9 @@
 <button (click)="alertInfo($event)">Evento</button>
 <div (mousemove)="mouseMoveTest($event)" style="background: red; width: 300px; height: 300px"></div>
 {{ position.x }} - {{ position.y }}
+
+<br>
+<hr />
+<h2>Two-way binding</h2>
+<input [(ngModel)]="name" type="text">
+{{ name }}
