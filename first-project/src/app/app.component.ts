@@ -3,6 +3,7 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
 @Component({
   selector: 'app-root',
   template: `
+  <app-diretivas-atributos></app-diretivas-atributos>
   <app-diretivas-estruturais></app-diretivas-estruturais>
   <app-data-biding></app-data-biding>
   <app-title *ngIf="destroy"></app-title>
