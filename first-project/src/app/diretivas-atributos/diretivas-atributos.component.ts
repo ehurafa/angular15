@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class DiretivasAtributosComponent implements OnInit {
   public value: boolean = false;
   public heightPx: string = '20px';
+  public name: string = "";
+  public list: Array<{ name: string }> = [];
 
   ngOnInit(): void {
     setInterval(() => {
@@ -23,5 +25,10 @@ export class DiretivasAtributosComponent implements OnInit {
         this.heightPx = '20px';
       }
     }, 2000)
+  };
+
+  public save() {
+    this.list.push({ name: this.name });
+    this.name = "";
   }
 }

@@ -3,3 +3,9 @@
 <p [ngClass]="{ 'active': value, 'disabled': !value }">ngClass</p>
 
 <p [ngStyle]="{ 'height': heightPx }">ngStyle</p>
+
+<hr />
+<p>ngModel</p>
+<input [(ngModel)]="name"/> {{ name }}
+<button (click)="save()">Salvar</button>
+<li *ngFor="let item of list">{{ item.name }}</li>
