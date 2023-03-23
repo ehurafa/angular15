@@ -13,6 +13,14 @@
 
 <hr />
 <ul>
-    <li *ngFor="let item of list; let i = index;" (click)="onClickEventList($event)">[{{ i }}] {{ item.name }} - {{ item.age }}</li>
+    <li *ngFor="let item of list; let i = index; even as isEven" (click)="onClickEventList($event)">[{{ i }}] {{ item.name }} - {{ item.age }} {{ isEven }}</li>
 </ul>
 <button (click)="onClickAddList()">Add</button>
+
+<hr />
+<input type="text" [(ngModel)]="name" />
+<div [ngSwitch]="name">
+    <p *ngSwitchCase="'rafa'">Rafa</p>
+    <p *ngSwitchCase="'juca'">Juca</p>
+    <p *ngSwitchDefault>Deu ruim na sua busca</p>
+</div>
