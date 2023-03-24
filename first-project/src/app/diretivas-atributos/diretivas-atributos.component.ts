@@ -9,7 +9,7 @@ export class DiretivasAtributosComponent implements OnInit {
   public value: boolean = false;
   public heightPx: string = '20px';
   public name: string = "";
-  public list: Array<{ name: string }> = [];
+  public list: Array<{ name: string }> = [{ name: "Erik" }];
 
   ngOnInit(): void {
     setInterval(() => {

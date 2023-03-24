@@ -9,3 +9,9 @@
 <input [(ngModel)]="name"/> {{ name }}
 <button (click)="save()">Salvar</button>
 <li *ngFor="let item of list">{{ item.name }}</li>
+
+<hr />
+<p>ng-template</p>
+<ng-template ngFor let-item [ngForOf]="list">
+    <p>{{ item.name }}</p>
+</ng-template>
