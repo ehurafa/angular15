@@ -14,6 +14,10 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
   <button (click)="add()">Adicionar</button>
   {{ valor }}
   <button (click)="destroyComponent()">Destruir componente</button>
+  <app-diretivas-atributos>
+    <h1>Aula de diretivas de atributo</h1>
+    <h3>Final da aula</h3>
+  </app-diretivas-atributos>  
   <router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {

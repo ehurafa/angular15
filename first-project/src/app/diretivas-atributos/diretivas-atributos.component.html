@@ -19,3 +19,11 @@
 <hr />
 <p>ng-content</p>
 <ng-content select="h3"></ng-content>
+
+<hr />
+<p>Pipes</p>
+<input [(ngModel)]="name"/> {{ name }}
+<ul>
+    <li *ngFor="let item of list">{{ item.name | uppercase }}</li>
+</ul>
+{{ date | date: 'ddMMyyyy'}}
