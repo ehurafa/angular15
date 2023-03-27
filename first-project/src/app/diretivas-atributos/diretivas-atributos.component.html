@@ -1,4 +1,4 @@
-
+<ng-content select="h1"></ng-content>
 <h2>Diretivas estruturais</h2>
 <p [ngClass]="{ 'active': value, 'disabled': !value }">ngClass</p>
 
@@ -15,3 +15,7 @@
 <ng-template ngFor let-item [ngForOf]="list">
     <p>{{ item.name }}</p>
 </ng-template>
+
+<hr />
+<p>ng-content</p>
+<ng-content select="h3"></ng-content>
