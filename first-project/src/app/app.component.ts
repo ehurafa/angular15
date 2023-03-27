@@ -3,6 +3,9 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
 @Component({
   selector: 'app-root',
   template: `
+  <app-input [counter]="addValue"></app-input>
+  <button (click)="addInput()">Adicionar xx</button>
+  <hr />
   <app-new-component></app-new-component>
   <app-diretivas-atributos>
     <h1>Aula de diretivas de atributo</h1>
@@ -27,8 +30,14 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentIni
 
   public valor: number = 1;
 
+  public addValue: number = 10;
+
   public add(): number {
     return this.valor += 1
+  }
+
+  public addInput() {
+    this.addValue += 1
   }
 
   public destroyComponent() {
