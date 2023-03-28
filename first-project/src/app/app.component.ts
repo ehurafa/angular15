@@ -3,6 +3,7 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
 @Component({
   selector: 'app-root',
   template: `
+  <app-output></app-output>
   <app-input [counter]="addValue"></app-input>
   <button (click)="addInput()">Adicionar xx</button>
   <hr />
