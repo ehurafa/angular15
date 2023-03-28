@@ -3,9 +3,13 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
 @Component({
   selector: 'app-root',
   template: `
-  <app-output></app-output>
+  <app-output (sendData)="setData($event)"></app-output>
   <app-input [counter]="addValue"></app-input>
   <button (click)="addInput()">Adicionar xx</button>
+  <ng-template [ngIf]="getData">
+    <h1>{{ getData.name }}</h1>
+    <h2>{{ getData.age }}</h2>
+  </ng-template>
   <hr />
   <app-new-component></app-new-component>
   <app-diretivas-atributos>
@@ -33,6 +37,8 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentIni
 
   public addValue: number = 10;
 
+  public getData: { name: string, age: number } | undefined; 
+
   public add(): number {
     return this.valor += 1
   }
@@ -43,6 +49,10 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentIni
 
   public destroyComponent() {
     this.destroy = false;
+  }
+
+  public setData(event: { name: string, age: number }) {
+    this.getData = event
   }
 
   ngOnInit(): void {
