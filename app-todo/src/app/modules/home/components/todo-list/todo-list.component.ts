@@ -8,10 +8,7 @@ import { TaskList } from '../../model/task-list';
 })
 export class TodoListComponent {
 
-  public taskList: Array<TaskList> = [
-    { task: "Minha task", checked: true },
-    { task: "Minha task 2", checked: false }
-  ];
+  public taskList: Array<TaskList> = [];
 
   public deleteItemTaskList(event: number) {
     this.taskList.splice(event, 1);
@@ -22,6 +19,10 @@ export class TodoListComponent {
     if (confirm) {
       this.taskList = [];
     }
+  }
+
+  public setEmitTaskList(event: string) {
+    this.taskList.push({ task: event, checked: false });
   }
 
 }
