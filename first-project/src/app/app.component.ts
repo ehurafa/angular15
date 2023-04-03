@@ -3,6 +3,8 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentCh
 @Component({
   selector: 'app-root',
   template: `
+  <app-food-add></app-food-add>
+  <hr />
   <app-food-list></app-food-list>
   <hr />
   <app-output (sendData)="setData($event)"></app-output>
