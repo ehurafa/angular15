@@ -61,26 +61,26 @@ export class AppComponent implements OnInit, OnChanges, DoCheck, AfterContentIni
 
   ngOnInit(): void {
     setTimeout(() => {
-      console.log('OnInit')
+      // console.log('OnInit')
     }, 5000)
   }
 
   ngOnChanges(): void {
-    console.log('ngOnChanges')
+    // console.log('ngOnChanges')
   }
   ngDoCheck(): void {
-    console.log('ngDoCheck')
+    // console.log('ngDoCheck')
   }
   ngAfterContentInit(): void {
-    console.log("ngAfterContentInit")
+    // console.log("ngAfterContentInit")
   }
   ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked')
+    // console.log('ngAfterContentChecked')
   }
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit')
+    // console.log('ngAfterViewInit')
   }
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked')
+    // console.log('ngAfterViewChecked')
   }
 }

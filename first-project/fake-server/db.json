@@ -1,24 +1,8 @@
 {
   "list-food": [
     {
-      "id": 1,
-      "name": "X-bacon"
-    },
-    {
-      "id": 2,
-      "name": "Feijão"
-    },
-    {
-      "id": 3,
-      "name": "Ovo"
-    },
-    {
-      "name": "wew",
-      "id": 4
-    },
-    {
-      "name": "salada",
-      "id": 5
+      "name": "item 3dsdsd",
+      "id": 3
     }
   ]
 }
