@@ -9,7 +9,7 @@ import { FoodListService } from 'src/app/services/foodlist.service';
 })
 export class FoodListComponent implements OnInit {
 
-  public foodList: FoodList | any;
+  public foodList: Array<FoodList> = [];
   constructor(private foodListService: FoodListService) {}
 
   ngOnInit() {
@@ -17,6 +17,13 @@ export class FoodListComponent implements OnInit {
       res => this.foodList = res,
       error => error
     );
-    this.foodListService.emitEvent.subscribe({ next: (res: any) => alert(`Você adicinou -> ${res}`) });
+    this.foodListService.emitEvent.subscribe(
+      { 
+        next: (res: any) => {
+          alert(`Você adicinou -> ${res.name}`) 
+          return this.foodList.push(res)
+        }
+      }
+    );
   }
 }
