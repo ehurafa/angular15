@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FormsComponent {
 
+  public foodList: Array<{ food: string }> = [
+    { food: "X-salada" },
+    { food: "X-bacon" },
+    { food: "Coxinha" }
+  ];
+
 }
