@@ -1,4 +1,4 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
     <div>
         valid {{ form.valid }}
     </div>
@@ -6,7 +6,7 @@
     <label>
         Nome:
         <input type="text" name="name" #name="ngModel" [ngModel]="name.value" required />
-        <span *ngIf="!name.valid && (name.dirty && name.touched)" style="background: red">Inválido</span>
+        <span *ngIf="name.invalid && (name.dirty && name.touched)" style="background: red">Inválido</span>
         {{ name.valid }}
         {{ name.dirty }}
         {{ name.touched }}
@@ -46,6 +46,8 @@
         <option value="">Selecione um alimento</option>
         <option *ngFor="let item of foodList" [ngValue]="item">{{ item.food }}</option>
     </select>
+    <br />
+    <button [disabled="form.invalid">Enviar dados</button>
 </form>
 
 {{ form.value | json }}
