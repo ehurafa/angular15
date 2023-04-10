@@ -1,7 +1,15 @@
 <form #form="ngForm">
+    <div>
+        valid {{ form.valid }}
+    </div>
+    <br />
     <label>
         Nome:
-        <input type="text" name="name" ngModel>
+        <input type="text" name="name" #name="ngModel" [ngModel]="name.value" required />
+        <span *ngIf="!name.valid && (name.dirty && name.touched)" style="background: red">Inválido</span>
+        {{ name.valid }}
+        {{ name.dirty }}
+        {{ name.touched }}
     </label>
     <br />
     <label>
