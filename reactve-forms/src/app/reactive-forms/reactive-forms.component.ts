@@ -16,9 +16,11 @@ export class ReactiveFormsComponent {
   constructor(private fb: FormBuilder) {}
 
   public submitForm() {
-    console.log(this.registerForm.value);
-    console.log(this.registerForm.value.firstName);
-    console.log(this.registerForm.value.lastName);
+    if(this.registerForm.valid) {
+      console.log(this.registerForm.value);
+      console.log(this.registerForm.value.firstName);
+      console.log(this.registerForm.value.lastName);
+    }
   }
 
 }
