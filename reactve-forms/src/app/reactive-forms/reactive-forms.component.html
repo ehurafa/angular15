@@ -1,7 +1,12 @@
 <form [formGroup]="registerForm" (ngSubmit)="submitForm()"> 
     <input type="text" formControlName="firstName" />
+    <span *ngIf="registerForm.get('firstName')?.errors && (registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty)">Adicione o nome</span>
     <br>
     <input type="text" formControlName="lastName" />
-    <p>{{ registerForm.get('firstName')?.value }}</p>
+    <p>
+        {{ registerForm.get('firstName')?.errors | json }}
+        {{ registerForm.get('firstName')?.touched | json }}
+        {{ registerForm.get('firstName')?.dirty | json }}
+    </p>
     <button>Enviar</button>
 </form>
