@@ -10,7 +10,8 @@ export class ReactiveFormsComponent {
 
   public registerForm: FormGroup = this.fb.group({
     firstName: ['', Validators.required],
-    lastName: ['']
+    lastName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(6)]],
+    email: ['', [Validators.required, Validators.email]]
   })
 
   constructor(private fb: FormBuilder) {}

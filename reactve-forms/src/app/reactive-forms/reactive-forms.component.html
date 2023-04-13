@@ -1,12 +1,30 @@
 <form [formGroup]="registerForm" (ngSubmit)="submitForm()"> 
-    <input type="text" formControlName="firstName" />
-    <span *ngIf="registerForm.get('firstName')?.errors && (registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty)" style="background: red;">Adicione o nome</span>
+    <label> 
+        Nome:
+        <input type="text" formControlName="firstName" />
+        <span *ngIf="registerForm.get('firstName')?.errors && (registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty)" style="background: red;">Adicione o nome</span>
+    </label>
+    
     <br>
-    <input type="text" formControlName="lastName" />
+    <label>
+        Sobrenome:
+        <input type="text" formControlName="lastName" maxlangth="5" />
+        <span *ngIf="registerForm.get('lastName')?.errors && (registerForm.get('lastName')?.touched || registerForm.get('lastName')?.dirty)" style="background: red;">Favor deve ter no mínimo {{ registerForm.get('lastName')?.errors?.minlength?.requireLength | json }}
+        e você já digitou {{ registerForm.get('lastName')?.errors?.minlength?.actualLength | json }}</span>
+    </label>
+    <br />
+    <label>
+        Email:
+        <input type="email" formControlName="email" />
+    </label>
+ 
+    
     <p>
-        {{ registerForm.get('firstName')?.errors | json }}
+        <!-- {{ registerForm.get('firstName')?.errors | json }
         {{ registerForm.get('firstName')?.touched | json }}
-        {{ registerForm.get('firstName')?.dirty | json }}
+        {{ registerForm.get('firstName')?.dirty | json }} -->
+
+        {{ registerForm.get('lastName')?.errors | json }} 
     </p>
     <button [disabled]="registerForm.invalid">Enviar</button>
 </form>
