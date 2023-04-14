@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: 'foo', component: AboutComponent }
   ]},
   { path: "about/:id/:username", component: AboutComponent },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m=>m.DashboardModule) },
   { path: "404", component: ErrorComponent },
   { path: "**", redirectTo: '404' }
 ];
