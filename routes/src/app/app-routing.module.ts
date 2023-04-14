@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: 'full' },
   { path: "about", component: AboutComponent },
   { path: "404", component: ErrorComponent },
+  { path: "**", redirectTo: '404' }
 ];
 
 @NgModule({
