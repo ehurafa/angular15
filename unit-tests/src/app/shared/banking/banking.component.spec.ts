@@ -37,12 +37,28 @@ describe('BankingComponent', () => {
     expect(component.getWallet).toEqual(60);
   });
 
+  it('(U) setDraw: shoud transfer dont have string (isNaN) or savings < value', () => {
+    expect(component.setDraw('string')).not.toBeTruthy();
+    expect(component.setDraw('100')).not.toBeTruthy();
+
+    expect(component.getSavings).toEqual(10);
+    expect(component.getWallet).toEqual(50);
+  });
+
   it('(U) setDeposit: shoud transfer wallet from savings', () => {
     component.setDeposit('50');
     // fixture.detectChanges(); 
 
     expect(component.getWallet).toEqual(0);
     expect(component.getSavings).toEqual(60);
+  });
+
+  it('(U) setDeposit: shoud transfer dont have string (isNaN) or wallet < value', () => {
+    expect(component.setDeposit('string')).not.toBeTruthy();
+    expect(component.setDeposit('100')).not.toBeTruthy();
+
+    expect(component.getSavings).toEqual(10);
+    expect(component.getWallet).toEqual(50);
   });
 
 
