@@ -18,15 +18,23 @@ export class BankingComponent {
     return this.wallet;
   }
   
-  public setDraw(value: string): number {
+  public setDraw(value: string): number | undefined {
     const draw = Number(value);
-    console.log(draw)
-    return draw
+    console.log(draw) 
+    if(isNaN(draw) || this.savings < draw) {
+      return;
+    }
+    this.savings -= draw;
+    return (this.wallet += draw);
   }
 
-  public setDeposit(value: string): number {
+  public setDeposit(value: string): number | undefined {
     const deposit = Number(value);
     console.log(deposit)
-    return deposit
+    if(isNaN(deposit) || this.wallet < deposit) {
+      return;
+    }
+    this.wallet -= deposit;
+    return (this.savings += deposit);
   }
 }
