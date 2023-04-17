@@ -1,0 +1,16 @@
+<p>
+    <strong>Olá, Rafael Gomes</strong><br>
+    Ag: 9999, CO: 99999-9
+</p>
+
+<p>
+    Poupança: R$ {{ getSavings }}
+    <input type="text" #draw />
+    <button (click)="setDraw(draw.value)" >Sacar</button>
+</p>
+
+<p>
+    Carteira: R$ {{ getWallet }}
+    <input type="text" #deposit />
+    <button (click)="setDeposit(deposit.value)" >Depositar</button>
+</p>
