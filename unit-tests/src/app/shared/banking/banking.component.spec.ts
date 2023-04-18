@@ -61,5 +61,17 @@ describe('BankingComponent', () => {
     expect(component.getWallet).toEqual(50);
   });
 
+  it('(I) setDeposit: shoud transfer wallet from savings', () => {
+    let el = fixture.debugElement.nativeElement;
+    el.querySelector('#input-draw').value = '10';
+    el.querySelector('#deposit').click();
+
+    fixture.detectChanges();
+
+    expect(el.querySelector('#get-savings').textContent).toEqual('20');
+    expect(component.getSavings).toEqual(20);
+    expect(component.getWallet).toEqual(40);
+  });
+
 
 });
