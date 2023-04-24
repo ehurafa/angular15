@@ -13,29 +13,12 @@ export class ListComponent implements OnInit {
 
   }
 
-  public investiments: Array<Investiments> = [
-    {
-      name: "Itaú",
-      value: 100
-    },
-    {
-      name: "Bradesco",
-      value: 200
-    },
-    {
-      name: "Santander",
-      value: 300
-    },
-    {
-      name: "BB",
-      value: 400
-    }
-  ];
+  public investiments!: Array<Investiments>;
 
   ngOnInit(): void {
-    this.listInvestimentsService.list().subscribe(
-      (res) => console.log(res)
-    )
+    this.listInvestimentsService
+      .list()
+      .subscribe((res) => console.log(res));
   }
 
 }
